@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* Assignment 1 | COMP1073 Client-Side JavaScript */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 20%;
+}
+
+.selected {
+    background: #1bfc06;
+}
+
+table {
+    padding: 5%;
+}
+th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+td {
+    width: 20%;
+    text-align: center;
+}
