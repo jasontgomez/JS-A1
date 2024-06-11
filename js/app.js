@@ -5,6 +5,8 @@
 // Create a new speechSynthesis object
 const synth = window.speechSynthesis;
 const speakButton = document.querySelector('.translate');
+const generateButton = document.querySelector('.generate-story');
+const resetButton = document.querySelector('.reset');
 const selectOne = document.querySelector('.select-1');
 const selectTwo = document.querySelector('.select-2');
 const selectThree = document.querySelector('.select-3');
@@ -96,6 +98,25 @@ function getSelected(){
 	return targetString.trim();
 }
 
+// Generates a story by randomly selecting a cell from each column
+function generateStory() {
+	resetSelections()
+    let story = '';
+    for (let i = 0; i < 5; i++) {
+        const rowIndex = Math.floor(Math.random() * (document.getElementById("table").rows.length - 1)) + 1;
+        const cell = document.getElementById("table").rows[rowIndex].cells[i];
+        cell.classList.add("selected");
+        story += cell.textContent + ' ';
+    }
+}
+
+
+// Resets the selected cells
+function resetSelections() {
+	const selectedCells = document.querySelectorAll(".selected");
+	selectedCells.forEach(cell => cell.classList.remove("selected"));
+}
+
 /* Event Listeners
 -------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', populateTable);
@@ -104,6 +125,7 @@ speakButton.addEventListener('click', function () {
 });
 
 generateButton.addEventListener('click', generateStory);
+
 resetButton.addEventListener('click', resetSelections);
 
 // button listeners

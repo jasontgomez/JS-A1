@@ -9,9 +9,16 @@
 </head>
 <body>
 	<div class="container">
-		<button>Generate Story</button>
-		<button>Reset</button>
+		<button class="generate-story">Generate Story</button>
+		<button class="reset">Reset</button>
 		<table id="table">
+			<colgroup>
+				<col style="background-color:#C3B1E1">
+				<col style="background-color:#A7C7E7">
+				<col style="background-color:#C1E1C1">
+				<col style="background-color:#FAC898">
+				<col style="background-color:#F8C8DC">
+			</colgroup>
 			<thead>
 				<tr>
 					<th><button class="select-1">1</button></th>
@@ -25,8 +32,8 @@
 				<!-- Rows will be dynamically populated here -->
 			</tbody>
 		</table>
-
 		<button class="translate">Speak the value of var textToSpeak</button>
+		<p class="story-text"></p>
 	</div>
 	<script src="js/app.js"></script>
 </body>
