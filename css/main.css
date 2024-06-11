@@ -13,6 +13,7 @@
 
 table {
     padding: 5%;
+    border-spacing: 0;
 }
 th {
     padding-top: 20px;
