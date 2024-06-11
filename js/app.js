@@ -15,17 +15,28 @@ const selectFive = document.querySelector('.select-5');
 
 // Arrays
 let speachOne = ['The turkey', 'Mom', 'Dad', 'The dog', 'My teacher', 'The elephant', 'The cat'];
-let speachTwo = ['sat on', 'ate', 'danced with', 'saw', 'doesn\'t like', 'kissed', ''];
-let speachThree = ['a funny', 'a scary', 'a goofy', 'a slimy', 'a barking', 'a fat', ''];
+let speachTwo = ['sat on', 'ate', 'danced with', 'saw', 'doesn\'t like', 'kissed', 'ran away from'];
+let speachThree = ['a funny', 'a scary', 'a goofy', 'a slimy', 'a barking', 'a fat', 'a mean'];
 let speachFour = ['goat', 'monkey', 'fish', 'cow', 'frog', 'bug', 'worm'];
-let speachFive = ['on the moon', 'on the chair', 'in my spaghetti', 'in my soup', 'on the grass', 'in my shoes', ''];
+let speachFive = ['on the moon', 'on the chair', 'in my spaghetti', 'in my soup', 'on the grass', 'in my shoes', 'in my car'];
+let speachs = [speachOne, speachTwo, speachThree, speachFour, speachFive]
 
 /* Functions
 -------------------------------------------------- */
+
+//populate the HTML table using the arrays
 function populateTable() {
+
+	//select table
 	const tableBody = document.querySelector('#table tbody');
+
+	//run for the length of the array
 	for (let i = 0; i < speachOne.length; i++) {
+
+		//create a new row
 		const row = document.createElement('tr');
+
+		//fill the row with the array contents
 		row.innerHTML = `
 			<td>${speachOne[i]}</td>
 			<td>${speachTwo[i]}</td>
@@ -33,10 +44,13 @@ function populateTable() {
 			<td>${speachFour[i]}</td>
 			<td>${speachFive[i]}</td>
 		`;
+
+		//append the row to the table
 		tableBody.appendChild(row);
 	}
 }
 
+//read the sentence
 function speakNow(string) {
 	const utterThis = new SpeechSynthesisUtterance(string);
 	synth.speak(utterThis);
@@ -49,11 +63,8 @@ function generateStory() {
 	let story = '';
 
 	for (let i = 0; i < 5; i++) {
-		let cell;
-		do {
-			const rowIndex = Math.floor(Math.random() * speachOne.length);
-			cell = document.getElementById("table").rows[rowIndex + 1].cells[i]; // +1 to account for the header row
-		} while (cell.textContent.trim() === "");
+		const rowIndex = Math.floor(Math.random() * speachs[i]);
+		const cell = document.getElementById("table").rows[rowIndex + 1].cells[i]; // +1 to account for the header row
 
 		cell.classList.add("selected");
 		story += cell.textContent + ' ';
