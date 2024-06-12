@@ -41,7 +41,19 @@ button {
 
 .buttonFlex button {
     color: whitesmoke;
+    border: solid;
+    border-color: white;
+    border-radius: 50%;
+    border-width: 5px;
+    padding: 20px;
+    box-shadow: 0 5px rgba(102,102,102,0.35);
 }
+
+.buttonFlex button:active {
+    background-image: linear-gradient(rgb(0 0 0/15%) 0 0);
+    box-shadow: none;
+    transform: translateY(4px);
+  }
 
 .generate-story {
     background-color: #04AA6D;
@@ -56,8 +68,20 @@ button {
 } 
 
 th button {
-    
+    font-weight: 900;
+    background-color: transparent;
+    border: solid;
+    border-radius: 100%;
+    border-color: white;
+    border-width: 5px;
+    box-shadow: 0 5px rgba(102,102,102,0.35);
 }
+
+th button:active {
+    background-color: rgba(0,0,0,0.19);
+    box-shadow: none;
+    transform: translateY(4px);
+  }
 
 table {
     padding: 5%;
