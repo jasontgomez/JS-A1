@@ -102,38 +102,53 @@ function resetSelections() {
 
 /* column button */
 function selectCell(rowIndex, colIndex) {
+	// get row in document
 	const row = document.getElementById("table").rows[rowIndex];
+	// check if the row exists
 	if (row) {
+		// get the cell in the row
 		const cell = row.cells[colIndex];
+		//check if the cell exists
 		if (cell) {
+			//add the selected class to the cell
 			cell.classList.add("selected");
+			//return the cell
 			return cell;
 		}
 	}
+	//error message in case something does not exist
 	console.log("target not found!");
 }
 
 // reset column selection
 function refreshCol(colIndex) {
+	// loop through each row
 	for (let i = 1; i < 8; i++){
+		//save the row in a variable
 		const row = document.getElementById("table").rows[i];
+		//remove the selected class from the cell in row
 		row.cells[colIndex].classList.remove("selected");
 	}
 }
 
-// grabs all cells with selected tag
+// function that returns a string from all selected story elements
 function getSelected(){
+	// variable to hold string story elements
 	let targetString = '';
-	// rows
+	// loop through each column
 	for (let i = 0; i < 5; i++){
-		//columns
+		// loop through each row
 		for (let j = 0; j < 8; j++){
+			// save the cell to a variable
 			const cell = document.getElementById("table").rows[j].cells[i];
+			//check if the cell has the selected class
 			if (cell.classList.contains("selected")){
+				//append the cell story text to the string
 				targetString = targetString + " " + cell.textContent;
 			}
 		}
 	}
+	//return the story string
 	return targetString;
 }
 

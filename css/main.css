@@ -6,9 +6,12 @@ Daniel Perusse 20055190
 Sebastian 200561191
 */
 
+
 html {
     border: 0;
     font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: lightyellow;
 }
 
 .container {
@@ -16,14 +19,45 @@ html {
     flex-direction: column;
     width: auto;
     margin: 15%;
-    margin-top: 30px;
+    margin-top: 60px;
+    margin-bottom: 0;
+}
+
+.buttonFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .selected {
     background: #1bfc06;
 }
 
+button {
+    width: fit-content;
+    margin: 0 20px 0 20px;
+    padding: 5px 10px 5px 10px;
+}
 
+.buttonFlex button {
+    color: whitesmoke;
+}
+
+.generate-story {
+    background-color: #04AA6D;
+}
+
+.translate {
+    background-color: #008CBA;
+}
+
+.reset {
+    background-color: #f44336;
+} 
+
+th button {
+    
+}
 
 table {
     padding: 5%;
@@ -38,4 +72,9 @@ td {
     width: 20%;
     text-align: center;
     padding: 7px
+}
+
+p {
+    margin: auto;
+    font-weight: 900;
 }

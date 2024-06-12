@@ -15,9 +15,13 @@ COMP1073
 </head>
 <body>
 	<div class="container">
-		<button class="generate-story">Generate Story</button>
-		<button class="reset">Reset</button>
+		<div class="buttonFlex">
+			<button class="generate-story">Generate Story</button>
+			<button class="translate">Read Story</button>
+			<button class="reset">Reset</button>
+		</div>
 		<table id="table">
+			<!-- colgroup to color each story element column -->
 			<colgroup>
 				<col style="background-color:#C3B1E1">
 				<col style="background-color:#A7C7E7">
@@ -35,11 +39,11 @@ COMP1073
 				</tr>
 			</thead>
 			<tbody>
-				<!-- Rows will be dynamically populated here -->
+				<!-- Rows will be dynamically populated here using JavaScript -->
 			</tbody>
 		</table>
-		<button class="translate">Speak the value of var textToSpeak</button>
-		<p class="story-text"></p>
+
+		<p class="story-text">Try generating a story!</p>
 	</div>
 	<script src="js/app.js"></script>
 </body>
